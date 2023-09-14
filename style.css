@@ -7,13 +7,13 @@
 }
 #totalAttacks {
     position: absolute;
-    top: 75%;
+    top: 80%;
     left: 10px;
     z-index: 1000;
     padding: 6px;
     background-color: white;
     width: 15%;
-    font-family: 'Roboto', sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 html, body {
     margin: 0;
