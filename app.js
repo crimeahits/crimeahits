@@ -11,7 +11,7 @@ var supabase = supabase.createClient(supabaseUrl, supabaseKey);
 const today = new Date().toISOString().substr(0, 10);
 const datePicker = document.getElementById("datePicker");
 
-datePicker.addEventListener('change', updateMarkers)
+datePicker.addEventListener('change', updateMarkers);
 datePicker.value = today;
 
 async function updateMarkers() {
@@ -23,7 +23,7 @@ async function updateMarkers() {
         .eq('date', selectedDate);
 
     map.eachLayer(function (layer) {
-        if (layer instanceof L.Circle) {
+        if (layer instanceof L.circleMarker) {
             map.removeLayer(layer);
         }
     });
@@ -31,10 +31,9 @@ async function updateMarkers() {
     if (data && data.length > 0) {
         data.forEach(marker => {
             var coords = [marker.latitude, marker.longitude];
-            var markerLayer = L.circle(coords, {
+            var markerLayer = L.circleMarker(coords, {
                 color: 'red',
-                fillColor: '#f03',
-                fillOpacity: 1,
+                opacity: 1,
                 radius: 1820
             }).addTo(map);
             markerLayer.bindPopup(`<b>${marker.name}</b><br>${marker.description}`);
@@ -42,5 +41,5 @@ async function updateMarkers() {
     }
 }
 
-updateMarkers()
+updateMarkers();
 
