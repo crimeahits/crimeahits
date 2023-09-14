@@ -10,6 +10,7 @@ var supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 const today = new Date().toISOString().substr(0, 10);
 const datePicker = document.getElementById("datePicker");
+const totalAttacks = document.getElementById("totalAttacks");
 
 datePicker.addEventListener('change', updateMarkers);
 datePicker.value = today;
@@ -40,6 +41,7 @@ async function updateMarkers() {
             markerLayer.bindPopup(`<b>${marker.name}</b><br>${marker.description}`);
         });
     }
+    totalAttacks.innerHTML = `Усього атак: ${data.length.toString()}`
 }
 
 updateMarkers();
