@@ -34,7 +34,7 @@ async function updateMarkers() {
             var markerLayer = L.circleMarker(coords, {
                 color: 'red',
                 opacity: 1,
-                radius: 25
+                radius: 14
             }).addTo(map);
             markerLayer.bindPopup(`<b>${marker.name}</b><br>${marker.description}`);
         });
