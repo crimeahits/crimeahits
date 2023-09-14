@@ -5,6 +5,15 @@
     left: 10px;
     z-index: 1000;
 }
+#totalAttacks {
+    position: absolute;
+    top: 90%;
+    left: 10px;
+    z-index: 1000;
+    padding: 6px;
+    background-color: white;
+    width: 15%;
+}
 html, body {
     margin: 0;
     padding: 0;
