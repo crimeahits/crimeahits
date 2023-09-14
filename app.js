@@ -23,7 +23,7 @@ async function updateMarkers() {
         .eq('date', selectedDate);
 
     map.eachLayer(function (layer) {
-        if (layer instanceof L.circleMarker) {
+        if (layer instanceof L.CircleMarker) {
             map.removeLayer(layer);
         }
     });
