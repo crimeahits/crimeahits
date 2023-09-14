@@ -31,7 +31,12 @@ async function updateMarkers() {
     if (data && data.length > 0) {
         data.forEach(marker => {
             var coords = [marker.latitude, marker.longitude];
-            var markerLayer = L.marker(coords).addTo(map);
+            var markerLayer = L.circle(coords, {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 1,
+                radius: 100
+            }).addTo(map);
             markerLayer.bindPopup(`<b>${marker.name}</b><br>${marker.description}`);
         });
     }
