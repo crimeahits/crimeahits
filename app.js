@@ -22,9 +22,6 @@ async function updateMarkers() {
         .select('*')
         .eq('date', selectedDate);
 
-    console.log('Data:', data);
-    console.log('Error:', error);
-
     map.eachLayer(function (layer) {
         if (layer instanceof L.Marker) {
             map.removeLayer(layer);
