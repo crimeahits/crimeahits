@@ -35,7 +35,7 @@ async function updateMarkers() {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 1,
-                radius: 100
+                radius: 240
             }).addTo(map);
             markerLayer.bindPopup(`<b>${marker.name}</b><br>${marker.description}`);
         });
